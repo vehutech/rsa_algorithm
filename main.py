@@ -1,9 +1,10 @@
-import random
 import math
-from validatePrime import isPrime
 from genPrime import generatePrime
 from modeInverse import modInverse
-from userInput import userInput
+# from userInput import userInput
+
+minVal = 10000
+maxVal = 50000
 
 def main():
     print("WELCOME")
@@ -11,8 +12,8 @@ def main():
     print("RSA is an encryption technique used as a security layer between people, having a public and a private key.")
     
     try:
-        minVal = userInput("minimum")
-        maxVal = userInput("maximum")
+        # minVal = userInput("minimum")
+        # maxVal = userInput("maximum")
         
         # Validation
         if minVal >= maxVal:
