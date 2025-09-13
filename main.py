@@ -1,7 +1,7 @@
 import math
 from genPrime import generatePrime
 from modeInverse import modInverse
-# from userInput import userInput
+# from getPrime import userInput
 
 minVal = 10000
 maxVal = 50000
