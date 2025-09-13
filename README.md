@@ -58,7 +58,7 @@ The RSA algorithm is based on the mathematical difficulty of factoring large com
 ## 🚀 Installation
 
 ### Prerequisites
-- A C/C++ compiler (GCC recommended) or appropriate IDE
+- A python compiler or appropriate IDE
 - No additional libraries required
 
 ### Steps
@@ -73,15 +73,15 @@ The RSA algorithm is based on the mathematical difficulty of factoring large com
    ```
 
 3. **Compile the code**
-   ```bash
-   gcc -o rsa_algorithm main.c
+   On Windows
+   ```powershell
+   python rsa_algorithm.py
    ```
-   *Note: Adjust the compilation command based on your specific files*
+   On macOS
+   ```bash
+   python3 rsa_algorithm.py
+   ```
 
-4. **Run the application**
-   ```bash
-   ./rsa_algorithm
-   ```
 
 ### Alternative: Using an IDE
 1. Download or clone the repository
@@ -115,33 +115,46 @@ The application will present you with a menu-driven interface where you can:
 
 ```
 rsa_algorithm/
-├── README.md
-├── main.c                 # Main program file
-├── rsa.c                  # RSA algorithm implementation
-├── rsa.h                  # Header file with declarations
-├── utils.c                # Utility functions
-├── utils.h                # Utility function headers
-└── examples/              # Example inputs and outputs
+├── 
+├── genPrime.py                 # Generate prime numbers
+├── main.py                     # Main entry file
+├── rsa.h                       # Header file with declarations
+├── modeInverse.py              # A function to inverse mode
+├── getPrime.py                # A mini dev version to get random prime num from users.
+├── validatePrime.py                # To validate input is actually prime and meet certain range requirement
+└── README.md
 ```
 
-*Note: Actual file structure may vary. Please check the repository for exact files.*
 
 ## ⚙️ How It Works
 
-### 1. Key Generation Process
-- Generates random prime numbers
-- Calculates the public and private key components
-- Ensures mathematical validity of the key pair
+### Module Breakdown
 
-### 2. Encryption Process
-- Takes plaintext input from user
-- Applies RSA encryption formula
-- Returns encrypted ciphertext
+#### `main.py`
+- Entry point of the application
+- Handles the main program flow and user interface
 
-### 3. Decryption Process
-- Takes ciphertext as input
-- Applies RSA decryption formula using private key
-- Recovers original plaintext message
+#### `genPrime.py` 
+- Contains functions for generating prime numbers
+- Implements prime number generation algorithms
+
+#### `modInverse.py`
+- Calculates modular multiplicative inverse
+- Essential for computing the private key component
+
+#### `validatePrime.py`
+- Validates whether a number is prime
+- Implements primality testing algorithms
+
+#### `getPrime.py`
+- Handles all user input operations
+- Provides input validation and processing
+
+### Process Flow
+1. **Key Generation**: Uses `genPrime.py` and `modInverse.py` to create key pairs
+2. **User Interaction**: `getPrime.py` manages all user inputs
+3. **Validation**: `validatePrime.py` ensures mathematical correctness
+4. **Main Logic**: `main.py` orchestrates the entire RSA process
 
 ## 📝 Examples
 
@@ -245,4 +258,4 @@ This project is open source. Please check the repository for specific license in
 
 ---
 
-*Made with ❤️ for cryptography education*
+*Made with ❤️ for cryptography education by D Vehu Alonge*
